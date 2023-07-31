@@ -1,0 +1,14 @@
+<%-include("../header")%>
+<%console.log(list)%>
+<%list.forEach( (member)=>{%>
+    id : <%=member.ID %><br>
+    pwd : <%=member.PWD %><br>
+    addr : <%=member.ADDR %><br>
+    name : 
+    <a href="/member/member_view/<%=member.ID%>">
+    <%=member.NAME %>
+    </a>
+    <hr>
+<%})%>
+
+<a href="/member/register_form">데이터 추가</a>

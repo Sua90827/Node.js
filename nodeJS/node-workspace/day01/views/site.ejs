@@ -1,0 +1,30 @@
+<table border="1">
+    <% const site = sites.site; %>
+    <tr>
+    <% 
+        for(let i=0; i<site[0].length; i++){
+            %>
+        <td><%=site[0][i]%></td>
+        <%
+    } %>
+    </tr>
+    
+    <%
+        for(let i=1; i<site.length; i++){
+            %>
+            <tr>
+            <%
+            for(let j=0; j<site[i].length; j++){
+                if(j==1){
+                    %>
+                    <th><a href="<%=Object.values(site[i][j])%>"><%=Object.keys(site[i][j])%></a></th>
+                <%}else{
+                    %>
+                <th><%=site[i][j]%></th>    
+            <% }} %>
+            </tr> 
+    <%    } %>   
+    
+    
+
+</table>

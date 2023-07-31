@@ -1,0 +1,14 @@
+<table border="1">
+    <tr><th>goods_id</th> <th>title</th><th>price</th>
+    <th>number</th><th>total</th></tr>
+    <% list.forEach(item => { console.log(item); %>
+    <tr>
+    <td><%= item.goods_id %></td>
+    <td><%= item.title %></td>
+    <td><%= item.price %>원</td>
+    <td><%= item.number %>개</td>
+    <td><%= item.total %>원</td>
+    </tr>
+    <% }) %>
+    </table>
+    <a href="/cookie/cart">목록 이동</a>

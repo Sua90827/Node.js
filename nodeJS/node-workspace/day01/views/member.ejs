@@ -1,0 +1,24 @@
+<table border="1">
+    <tr>
+        <th>이름</th> <th>나이</th> <th>주소</th>
+    </tr>
+    <tr>
+        <td><%= context['arr'][0] %></td> 
+        <td><%= context['arr'][1] %></td> 
+        <td><%= context['arr'][2] %></td>
+    </tr>
+    <% const obj = context.obj; %>
+    <tr>
+        <td><%= obj.name %></td> 
+        <td><%= obj.age %></td> 
+        <td><%= obj.addr %></td>
+    </tr>
+    <tr>
+        <td><%= context['name'] %></td> 
+        <td><%= context['age'] %></td> 
+        <td><%= context['addr'] %></td>
+    </tr>
+</table>
+<%= Object.keys(context) %><br>
+<%= Object.keys(context.obj) %><br>
+<%= Object.values(context) %><br>
