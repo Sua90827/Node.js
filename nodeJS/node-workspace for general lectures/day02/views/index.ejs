@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    dddd
+    <%console.log(member); %>
+    <% 
+        for(var i=0; i<member.length; i++){
+            console.log( member[i].id);
+            console.log( member[i].name);
+            console.log( member[i].addr);
+        }
+    
+    %>
+    <%  member.forEach(mem => {%>
+        id: <%=mem.id %> <br>
+        name : <%= mem.name %> <br>
+        addr : <%= mem.addr %> <hr>
+    <%}); %>
+</body>
+</html>

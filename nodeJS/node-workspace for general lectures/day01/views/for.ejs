@@ -1,0 +1,32 @@
+<%= console.log(name) %>
+<input type="text" value="<%= name[0]%>"><br>
+<a href="<%= name[1]%>"> <%=name[1]%> </a><br>
+
+<% 
+    var zxcv = 10;
+    for(let i=0; i<name.length; i++){
+        console.log(name[i]);
+    }
+%>
+
+    <ul>
+        <% 
+           
+            for(let i=0; i<name.length; i++){
+            console.log(name[i]);
+        %>
+
+            <li><%=name[i] %><%=zxcv%></li>
+
+        <%
+            }
+        %>
+    </ul>
+
+<hr>
+    <%
+        name.forEach( (v, i) => {
+            console.log( i+"."+v )
+        });
+    %>
+    
