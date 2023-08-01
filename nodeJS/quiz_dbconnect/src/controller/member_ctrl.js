@@ -6,8 +6,9 @@ const join = (req, res)=>{
     res.render("member/join");
 }
 const joinDo = async(req, res)=>{
-    const register = await service.register();
+    const msg = await service.register(req.body);
     
-    res.render("/");
+    res.send(msg);
+    // res.render("/");
 }
 module.exports={login, join, joinDo}
