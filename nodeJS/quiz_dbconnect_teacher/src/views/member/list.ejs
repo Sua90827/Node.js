@@ -1,0 +1,19 @@
+<%- include("../default/header")%>
+List Page
+<% console.log("list ejs => ", list)%>
+<table border="1">
+    <tr>
+        <th>아이디</th>
+        <th>비밀번호</th>
+        <th>이름</th>
+        <th>주소</th>
+    </tr>
+    <% list.forEach(member=>{%>
+        <tr>
+            <td><%= member.ID %></td>
+            <td><%= member.PWD %></td>
+            <td><%= member.NAME %></td>
+            <td><%= member.ADDR %></td>
+        </tr>
+    <%}); %>
+</table>
