@@ -1,0 +1,25 @@
+<script>
+    async function test(){
+        const res = await fetch("/get_count");
+        console.log(res);
+        const data = res.json();
+        console.log(data);
+        document.getElementById("cnt").innerHTML = data.cnt;
+        /*
+        fetch("/get_count")//데이터를 받아오는 경로
+        .then(res =>{//연결이 되면 이쪽으로 연동해라(.then)  res = 응답 내용 전체가 들어오게 되고, 들어게 되면 이 함수를 실행해라.
+        console.log(res);
+        return res.json(); 
+    })
+    .then (data =>{
+        console.log("data : ", data);
+        console.log("data.cnt : ", data.cnt);
+        document.getElementById("cnt").innerHTML=data.cnt;
+    })
+    */
+    }
+</script>
+<h1>day</h1><h1>day</h1><h1>day</h1>
+<h1>day</h1><h1>day</h1><h1>day</h1>
+<button onclick="test()">클릭</button>
+<label id = "cnt">0</label>

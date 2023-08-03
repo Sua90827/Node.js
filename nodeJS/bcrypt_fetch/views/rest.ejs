@@ -1,0 +1,43 @@
+<script>
+    let text;
+    window.onload=()=>{
+        txt = document.querySelector("#txt");
+    }
+    const getFunc=()=>{
+        fetch("/test", {method : "get"})
+        .then(res=>{return res.json();})//중괄호가 없으면 return 을 생략할 수 있음.
+        .then(data => {
+            console.log(data);
+            txt.innerHTML = data;
+        })
+    }
+    const postFunc=()=>{
+        fetch("/test", {method:"post"})
+        .then(res=> res.json())
+        .then(data=>{
+            console.log(data);
+            txt.innerHTML=data;
+        })
+    }
+    const putFunc=async()=>{
+        console.log("??");
+        const res = await fetch("/test", {method:"put"});
+        console.log(res);
+        const data = await res.json();
+        console.log(data);
+        txt.innerHTML=data;
+    }
+    const delFunc = async () => {
+        console.log("delete");
+        const res = await fetch("/test", {method: "delete"});
+        console.log(res);
+        const data = await res.json();
+        console.log(data);
+        txt.innerHTML=data;
+    }
+</script>
+<span id="txt">내용</span><hr>
+<button type="button" onclick="getFunc()">get</button>
+<button type="button" onclick="postFunc()">post</button>
+<button type="button" onclick="putFunc()">put</button>
+<button type="button" onclick="delFunc()">delete</button>
