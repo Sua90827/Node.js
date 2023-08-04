@@ -29,4 +29,9 @@ const upload = multer({storage : stg, fileFilter : f_Filter});
 const fileCtrl = require("../controller/file_controller");
 router.get("/", fileCtrl.views.index);
 router.post("/upload", upload.single("file_name"), fileCtrl.process.upload);//여기로 오면 일단 가운데 함수 실행하고 오른쪽으로 이동//single = 단일 파일
+router.get("/list", fileCtrl.views.list);
+router.get("/download/:fileName", fileCtrl.views.download);
+router.get("/deleteFile/:fileName", fileCtrl.process.deleteFile);
+router.get("/modify_form/:fileName", fileCtrl.views.modifyForm);
+router.post("/modify",upload.single("newFileName"), fileCtrl.process.modify);
 module.exports=router;

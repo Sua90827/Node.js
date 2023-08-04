@@ -1,0 +1,33 @@
+<script>
+let msg; 
+let cnt=0;
+window.onload=()=>{
+    msg = document.querySelector("#msg");
+}
+   
+function more() {
+
+    fetch("/more",
+        {
+            method : "get"
+        })
+        .then(res => res.json())
+        .then(result =>{
+            console.log(result);
+            let txt = "";
+            cnt+=3;
+            if(cnt>result.length){
+                cnt=result.length;
+            }
+            for(i=0; i<cnt; i++){
+                txt += result[i].id+",";  
+                txt += result[i].name+",";              
+                txt += result[i].addr + `<br>`;             
+            }
+            msg.innerHTML= txt;
+        })
+}
+</script>
+<span id="msg"></span>
+<input type="button" id="3more" onclick="more()" value="3명씩 더 보기">
+

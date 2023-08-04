@@ -1,0 +1,14 @@
+<% files.forEach( (item)=>{%>
+    <img src="/file/download/<%= item %>"
+                width="100px" height ="100px">
+    <a href="/file/download/<%= item %>">
+        <%= item %>
+    </a>
+    <hr>
+        <a href="/file/deleteFile/<%= item %>">삭제</a>
+        <a href="/file/modify_form/<%= item %>">수정</a>
+    <hr>
+    <br>
+    <% });%>
+<hr>
+<a href="/file">file_index이동</a>
