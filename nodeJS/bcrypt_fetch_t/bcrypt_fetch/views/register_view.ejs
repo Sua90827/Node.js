@@ -1,0 +1,27 @@
+<script>
+    const idcheck = () =>{
+        const id = document.querySelector("#id");
+        const label = document.querySelector("#label");
+        if(id.value.length < 3){
+            label.innerHTML = "길이가 짧습니다. 3자 이상";
+            return;
+        }
+        fetch("/idcheck/"+id.value,{method:"get"})
+        .then(res => res.json() )
+        .then(result=>{
+            if(result === 0){ label.innerHTML = "가입 가능한 ID"; }
+            else{ label.innerHTML = "존재하는 ID 입니다";  }
+        })
+    }
+</script>
+
+<form action="/register" method="post">
+    <input type="text" name="id" placeholder="input id"
+        id="id" oninput="idcheck()"><label id="label">id 확인</label>
+        <br>
+    <input type="text" name="pwd" placeholder="input password"><br>
+    <input type="text" name="name" placeholder="input name"><br>
+    <input type="text" name="addr" placeholder="input address"><br>
+    <input type="submit" value="register">
+</form>
+

@@ -1,0 +1,38 @@
+<script>
+    let txt;
+    window.onload = () =>{ 
+        txt = document.querySelector("#txt");
+    }
+    const getFunc = () =>{
+        fetch("/test", { method : "get" })
+        .then( res => res.json() )
+        .then( data => {
+            console.log( data ); 
+            txt.innerHTML = data;
+        })
+    }
+    const postFunc = () =>{
+        fetch("/test", { method : "post" })
+        .then( res => res.json() )
+        .then( data => {
+            console.log( data ); 
+            txt.innerHTML = data;
+        })
+    }
+    const putFunc = async () =>{
+        const res = await fetch("/test", { method : "put" });
+        const data = await res.json();
+        txt.innerHTML = data;
+    }
+    const delFunc = async () =>{
+        const res = await fetch("/test", { method : "delete" });
+        const data = await res.json();
+        txt.innerHTML = data;
+    }
+</script>
+
+<span id="txt">내용</span><hr>
+<button type="button" onclick="getFunc()">get</button>
+<button type="button" onclick="postFunc()">post</button>
+<button type="button" onclick="putFunc()">put</button>
+<button type="button" onclick="delFunc()">delete</button>

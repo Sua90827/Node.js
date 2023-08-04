@@ -1,0 +1,25 @@
+<script>
+    async function test(){
+        const res = await fetch("/get_count");
+        console.log( res );
+        const data = await res.json();
+        console.log( data );
+        document.getElementById("cnt").innerHTML = data.cnt;
+        /*
+        fetch("/get_count")
+        .then( res =>{ 
+            console.log( res ); 
+            return res.json();
+        })
+        .then( data =>{
+            console.log("data : ", data);
+            console.log("data.cnt : ", data.cnt);
+            document.getElementById("cnt").innerHTML = data.cnt;
+        })
+        */
+    }
+</script>
+<h1>일</h1> <h1>일</h1> <h1>일</h1> <h1>일</h1>
+<h1>일</h1> <h1>일</h1> <h1>일</h1> <h1>일</h1>
+<button onclick="test()">클릭</button>
+<label id="cnt"> 0 </label>
