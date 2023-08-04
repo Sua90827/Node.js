@@ -7,3 +7,21 @@
 <h1>day</h1><h1>day</h1><h1>day</h1>
 <h1>day</h1><h1>day</h1><h1>day</h1>
 <button onclick="test()">클릭</button>
+<label><%= cnt%></label>
+
+<!--
+<script>
+    function test(){
+        //location.href= "/non_fetch";
+        fetch("/get_count")
+        .then(res=>res.json())
+        .then(data=>{
+            document.getElementById("cnt").innerHTML=data.cnt;
+        }) //fetch는 데이터만 주고 받는 것. 페이지가 새롭게 로드되는 것이 아니어서 처리속도가 빠름. 
+    }
+</script>
+<h1>day</h1><h1>day</h1><h1>day</h1>
+<h1>day</h1><h1>day</h1><h1>day</h1>
+<button onclick="test()">클릭</button>
+<label id="cnt"><%= cnt%></label>
+-->

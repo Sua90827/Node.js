@@ -15,12 +15,12 @@ app.get("/non_fetch", (req, res)=>{
 app.get("/fetch01", (req, res)=>{
     cnt++;
     console.log(cnt+ "fetch01 서버 연동");
-    res.render("fetch01")
+    res.render("fetch01",{cnt}) //res.json("fetch01",{cnt})
 });
 app.get("/get_count", (req, res)=>{
     cnt++;
     console.log(cnt+ "get_count 서버 연동");
-    res.json({cnt : cnt});//페이지를 주는 것이 아니라 데이터(문자열)를 보내줌.
+    res.json({aaa : cnt});//페이지를 주는 것이 아니라 데이터(문자열)를 보내줌.
 });
 app.get("/fetch_count", (req, res)=>{
     res.render("fetch_count")

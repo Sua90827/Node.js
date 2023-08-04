@@ -2,9 +2,9 @@
     async function test(){
         const res = await fetch("/get_count");
         console.log(res);
-        const data = res.json();
+        const data = await res.json();
         console.log(data);
-        document.getElementById("cnt").innerHTML = data.cnt;
+        document.getElementById("cnt").innerHTML = data.aaa;
         /*
         fetch("/get_count")//데이터를 받아오는 경로
         .then(res =>{//연결이 되면 이쪽으로 연동해라(.then)  res = 응답 내용 전체가 들어오게 되고, 들어게 되면 이 함수를 실행해라.

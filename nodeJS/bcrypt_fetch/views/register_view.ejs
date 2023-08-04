@@ -1,0 +1,50 @@
+<form>
+    <input type="text" id="id" oninput="idCheck()" placeholder="input id"><span id="msg"></span><br>
+    <input type="text" id="pw" placeholder="input password"><br>
+    <input type="text" id="name" placeholder="input name"><br>
+    <input type="text" id="addr" placeholder="input address"><br>
+    <input type="submit" value="register">
+</form>
+<script>
+    async function idCheck(){
+        const inputId = document.getElementById("id").value;
+        const msg = document.getElementById("msg");
+
+        if(inputId === ""|| inputId.length === 0){
+            msg.innerHTML = "<b>check id</b>";
+            return;
+        }else if(inputId.length < 4 && inputId.length > 0){
+            msg.innerHTML="<b>too short</b>";
+            return;
+        }
+
+        console.log(inputId);
+
+        // fetch("/checkId", 
+        // {
+        //     method : "post",
+        //     headers : {"Content-Type" : "application/json"},
+        //     body : JSON.stringify({id : inputId})
+        // })
+        // .then(res => res.json())
+        // .then(result => {
+        //     if(result === 1){
+        //         msg.innerHTML = "<b>존재하는 ID 입니다</b>";
+        //     }else{
+        //         msg.innerHTML = "<b>가입 가능한 ID</b>";
+        //     }
+        // })
+        fetch("/checkId?id="+inputId, 
+        {
+            method : "get"
+        })
+        .then(res => res.json())
+        .then(result => {
+            if(result === 1){
+                msg.innerHTML = "<b>존재하는 ID 입니다</b>";
+            }else{
+                msg.innerHTML = "<b>가입 가능한 ID</b>";
+            }
+        })
+    }
+</script>

@@ -69,6 +69,7 @@
             }
         })
     }
+
     function del(){
         const delId = document.getElementById("del_id");
         fetch("/delete",{
@@ -76,12 +77,14 @@
             headers : {"Content-Type" : "application/json"},
             body : JSON.stringify({id : delId.value})
         })
-        .then (res => res.json())
-        .then(result => {
-            if(result ===1)
+        .then (gdgd => gdgd.json())
+        .then(qweqwe => {
+            console.log(qweqwe[0].id);
+            if(qweqwe ===1)
                 getMember();
         })
     }
+    
     function search(){
         //얘랑 같은 의미. document.getElementById("s_id").value;
         //fetch("/search?id="+$("#s_id").val(), {method : "get"})
