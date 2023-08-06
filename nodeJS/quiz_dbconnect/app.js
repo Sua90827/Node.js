@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 
+const session = require("express-session");
+const sessionConfig = require("./config/cookie_session/cookie_session_config");
+
+
 const bodyParser = require("body-parser");
 //app.use(express.json())
-
+app.use(session(sessionConfig.sessionConfig));
 app.use(bodyParser.urlencoded({extended : true}));
 const router = require("./src/routers/router")(app);
 

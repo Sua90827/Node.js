@@ -1,0 +1,8 @@
+<%- include ("../default/header") %>
+<form action="/member/modify" method="post">
+    <input type="text" readonly name="id" value="<%=member.ID%>"><br>
+    <input type="text" name="pwd" value="<%=member.PWD%>"><br>
+    <input type="text" name="name" value="<%=member.NAME%>"><br>
+    <input type="text" name="addr" value="<%=member.ADDR%>"><br>
+    <input type="submit" value="수정">
+</form>

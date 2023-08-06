@@ -1,0 +1,21 @@
+<script>
+    window.onload = () =>{
+        console.log(document.cookie);
+        let msg ="<a href='/'>HOME</a> ";
+        if(document.cookie.indexOf("isLogin=true") !== -1 ){
+            msg += '<a href="/member/logout">로그아웃</a>';
+            msg += ' <a href="/member/list">회원정보</a>';
+        }else{
+            msg += '<a href="/member/login">로그인</a>';
+            msg += '<a href="/member/login">회원정보</a>';
+        }
+        document.querySelector("#nav").innerHTML = msg
+    }
+</script>
+
+<nav id="nav">
+   
+</nav>
+<hr>
+
+
